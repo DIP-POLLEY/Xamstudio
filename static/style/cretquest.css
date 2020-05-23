@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+  background-image: linear-gradient(to bottom right,#fff ,rgb(236, 233, 233), rgb(207, 207, 207) );
+  /* background-color: rgb(238, 238, 238); */
+  height: 100vh;
+}
+.quap h1
+{
+    /* padding-top: 5vh; */
+    font-size: 3em;
+    padding-bottom: 5vh;
+    color: rgb(23, 131, 19);
+    text-align: center;
+    font-family: 'Aladin', cursive;
+}
+.quap button
+{
+    background: transparent;
+    border: none;
+
+}
+#popup
+{
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:50%;
+    border-radius: 20px;
+    padding-top: 4vh;
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-bottom: 4vh;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    background-image:linear-gradient(to left,#00b09b,#96c93d);
+    color: #fff;
+    font-size: 1.25em;
+    visibility: hidden;
+    opacity: 0;
+    text-align: left;
+    transition: 0.5s;
+}
+#popup.active
+{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+
+}
+.wrn
+{
+    color: red;
+}
+.quap#blured.active
+{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+form
+{
+    padding-top: 10vh;
+}
+#ques,#opt1,#opt2,#opt3,#opt4
+{
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  /* left: 5px; */
+  width: 30vw;
+  border-bottom: 2px solid rgb(93, 241, 172);
+  background: transparent;
+  color: rgb(109, 109, 109);
+  font-size: 1.25em;
+  margin-left: 2vw;
+}
+.ques
+{
+    color: rgb(46, 160, 70);
+    font-size: 1.25em;
+}
+
+.chckbx1,.chckbx2
+{
+    
+    display:flex;
+}
+#check2,#check4
+{
+    margin-left: 15vw;
+}
+#check1,#check3
+{
+    margin-left: 8vw;
+}
+.butn
+{
+  padding-top: 2vh;
+  padding-left: 3vw;
+  padding-bottom: 2vh;
+  padding-right: 3vw;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right,#007991,#78ffd6);
+  color: #fff;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.4);
+  font-weight: bold;
+}
+.cont 
+{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left:10px;
+  padding-right:10px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  /* font-size: 1.1em; */
+  color: #052242;
+}
+label.qno
+{
+    color: rgb(109, 109, 109);
+    font-size:1.5em;
+}

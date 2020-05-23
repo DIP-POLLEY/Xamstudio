@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'image/logo.png' %}" rel="icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attend Exam</title>
+        <link rel="stylesheet" href="{% static 'style/studslct.css' %}">
+    </head>
+    <body>
+
+        <nav class="stk">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">
+                <!-- <img src="image/teacher.png"> -->
+                {% if user.is_authenticated %}
+                Hi, {{user.first_name}}
+                {% endif %}
+            </label>
+            
+            <ul>
+              
+                <li><a href="../">Home</a></li>
+              <li><a href="../attend/result1">Check Result</a></li>
+              <li><a href="#proj">Contact Us</a></li>
+              <li><a href="../accounts/logout">Logout</a></li>
+              
+            </ul>
+          </nav>
+        <section class="from" id="blured">
+            <div>
+                <button onclick="toggle()">Note: Click here try out a demo exam here to get accustomed with the pattern.</button>
+                <h1>Subject Code</h1>
+                <br><br>
+            <form method="POST" action="room">
+                {% csrf_token %}
+                <!-- <label for="sbjct">Enter UFL : </label> -->
+            <input type="text" name="srch"id="sbjct" placeholder="e.g MAT2020"required/>
+            <br>
+            <input class="butn"type="submit" value="Attempt" >
+            <br><br><center>
+                <div style="font-size: 1.2em; color: red">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}</center>
+            </form>
+        </div>
+        </section>
+
+        <div id=popup>
+   
+            <div class="con"data-aos="fade-right">
+                 Try out a demo exam to understand the pattern.
+            </div>
+            <div class="con"data-aos="fade-right">
+               Use the following credentials to attend the demo exam:-
+           </div>
+            <div class="con"data-aos="fade-right">
+                 <b>Exam Code: </b>Demo360
+            </div>
+            <div class="con"data-aos="fade-right">
+                <b>Exam password: </b>Anterior
+            </div>
+           
+            
+            <br>
+            <center><button class="cont"onclick="toggle()">Continue</button></center>
+</div>
+
+<script type="text/javascript">
+    function toggle()
+    {
+        var blur = document.getElementById('blured');
+         blur.classList.toggle('active');
+      var pop = document.getElementById('popup');
+      pop.classList.toggle('active');
+    }
+</script>
+    </body>
+</html>

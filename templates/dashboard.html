@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'image/logo.png' %}" rel="icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XamStudio| Dashboard</title>
+        <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    </head>
+    <body style="background-color: #fff;">
+        <nav class="stk">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">
+                <!-- <img src="image/teacher.png"> -->
+                {% if user.is_authenticated %}
+                Hi, {{user.first_name}}
+                {% endif %}
+            </label>
+            
+            <ul>
+              
+              <li><a href="conduct/exam" >Create Exam</a></li>
+              <li><a href="attend/result1"target="a_blank">Check Result</a></li>
+              <li><a href="#proj">Contact Us</a></li>
+              <li><a href="accounts/logout">Logout</a></li>
+              
+            </ul>
+          </nav>
+          <section class="about">
+            <div class="join">
+                <div class="create">
+                    <h1>Conduct Exam</h1>
+                    <p>
+                        Welcome Examiner. Use this section to set and schedule your exam, Click the Host New Exam button below to start the process. Generate unique exam password, set scheduled exam timer and number of questions. After that simply continue adding unique questions one after the other to build your test. Once the setup is finished, your exam will get hosted on the website and be visible for examinees to appear in. Repeat the process to host multiple sets of new exams. Get a proper response from your students in no time.
+                    </p>
+                    <a href="conduct/exam" target="a_blank">Host New Exam</a>
+                </div>
+                <div class="result">
+                    <h1>Check Student Performance</h1>
+                    <p>
+                        Evaluate the performance of your examinees and determine who is acing the leaderboard while who needs to put in more effort. To display the report on examinee performance/details just click the Check Results button below. Add the Answers Key while generating your exam to get fast and seamless evaluation of examinees' scores in a flash through our result checker and computational analysis. Also respond to discrepancy reports from examinees on this portal for clarification of any doubts/queries. Proper and lucid judgement of your examinees' results has never been easier.
+                    </p>
+                    <a href="attend/result1"target="a_blank">Check Results</a>
+                </div>
+            </div>
+          </section>
+    </body>
+</html>

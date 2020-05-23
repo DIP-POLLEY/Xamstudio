@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'image/logo.png' %}" rel="icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Start Exam</title>
+        <link rel="stylesheet" href="{% static 'style/startxam.css' %}">
+    </head>
+<body>
+    <h1> Rules & Regulations</h1>
+    <div class="tp">
+        <p class="one">Subject: {{subject}}</p>
+        <p class="two">Date: {{date}}</p>
+    </div>
+    <div class="tp">
+        <p class="one">Starts at: {{tim1}}</p>
+        <p class="two">Ends at: {{tim2}}</p>
+    </div>
+    <section class="ruls">
+        <p>There are {{nq}} <b>Multiple Choice Questions</b> in this exam.</p>
+        <p>You are advised not to indulge in any malpractice during the exam which will automatically lead to shutting down your exam.</p>
+        <p>Any exam lost due to shuting down will not be entertained in future.</p>
+        <p>You need to click submit each time you answer, which will take you to the next question.</p>
+        <p>Once an answer is submitted no changes to it will be allowed.</p>
+        <p>At the end press <b>End Exam</b> to submit your paper.</p>
+    </section>
+    <form method="POST" action="rule">
+        {% csrf_token %}
+        <input type="password" name="pwrd" id="pwd" placeholder="Password"required/>
+            
+            <input class="butn"  type="submit" value="Start Exam" >
+    </form>
+    <!-- <script type="text/javascript">
+        function toggleFullScreen() {var params = [
+    'height='+screen.height,
+    'width='+screen.width,
+    'fullscreen=yes' // only works in IE, but here for completeness
+].join(',');
+     // and any other options from
+     // https://developer.mozilla.org/en/DOM/window.open
+
+var popup = window.open('xampage.html', 'popup_window', params); 
+popup.moveTo(0,0);
+}
+    </script> -->
+
+</body>
+</html>

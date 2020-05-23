@@ -1,0 +1,96 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body 
+{
+    background-image: linear-gradient(to right,#4B79A1,#283E51);
+    min-height: 100vh;
+    color: #fff;
+}
+.ppr h1
+{
+    padding-top: 2vh;
+    font-size: 3em;
+    text-align: center;
+}
+.ppr .join
+{
+    display: flex;
+    font-size: 1.5em;
+}
+.ppr .j1
+{
+    padding-left: 5vw;
+    width: 50vw;
+}
+.ppr .j2
+{
+    width: 50vw;
+    padding-right: 5vw;
+    text-align: right;
+}
+.qus
+{
+    padding-top: 10vh;
+    
+}
+.qus p
+{
+    /* text-align: center; */
+    /* width: 60vw; */
+    padding-left: 20vh;
+    padding-right: 20vh;
+    font-size: 1.5em;
+    
+}
+form
+{
+    padding-top: 15vh;
+    font-size: 1.2em;
+    padding-left: 5vw;
+    padding-right: 5vw;
+ 
+}
+
+.t1
+{
+
+    display: flex;
+   
+}
+.t2
+{
+
+    display: flex;
+  
+
+}
+#check1,#check2,#check3,#check4
+{
+    margin-left: 5vw;
+}
+label
+{
+    font-size: 1.2em;
+    width: 50vw;
+    padding-left: 1vw;
+    
+}
+.butn
+{
+    float: right;
+    margin-top:10vh;
+    margin-right: 4vw;
+  padding-top: 2vh;
+  padding-left: 3vw;
+  padding-bottom: 2vh;
+  padding-right: 3vw;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right,#00c6ff,#0072ff);
+  color: #fff;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.4);
+  font-weight: bold;
+}

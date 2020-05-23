@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'image/logo.png' %}" rel="icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Schedule Exam</title>
+        <link rel="stylesheet" href="{% static 'style/hosts.css' %}">
+    </head>
+    <body >
+        <nav class="stk">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">
+                <!-- <img src="image/teacher.png"> -->
+            Hi, {{name}}
+            </label>
+            
+            <ul>
+              
+                <li><a href="../">Home</a></li>
+              <li><a href="attend/result1">Check Result</a></li>
+              <li><a href="#proj">Contact Us</a></li>
+              <li><a href="../accounts/logout">Logout</a></li>
+              
+            </ul>
+          </nav>
+
+        <section class="from"id="blured">
+            <h1>Schedule Your Exam</h1>
+            <marquee><button class="wrn"onclick="toggle()">Please click here if you are creating an exam first time in our platform</button>
+            </marquee>
+            <form method=post action="exam">
+                {% csrf_token %}
+            <label for="sbjct">Subject Name: </label>
+            <input type="text" name="sname"id="sbjct" placeholder="Subject Name"required/>
+            <label class="pwd"for="pwd">Unique Exam Password: </label>
+            <input type="text" name="pwdname" id="pwd" placeholder="Password"required/>
+            <br><br><br>
+            <label for="dat">Enter Exam Date: </label>
+            <input type="date" id="dat" name="Date"required/>
+           
+            <label class="pwd"for="dura">No. of Questions: </label>
+            <input type="text" name = "noq"placeholder="00" id="dura"required/>
+            <br><br><br>
+            <label for="tim">Exam Starting Time: </label>
+            <input type="time" name="ti1" id="tim" name="Date"required/>
+            <label class="pwd"for="tim1">Exam Stopping Time: </label>
+            <input type="time" name ="ti2"id="tim1" name="Date"required/>
+            <br>
+            <center><input class="butn"type="submit" value="Confirm" ></center>
+            <!-- <a href="host.html">Start</a> -->
+            <br><br><center>
+            <div style="font-size: 1.2em; color: red">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}</center>
+            </form>
+        </section>
+
+
+        <div id=popup>
+   
+            <div class="con"data-aos="fade-right">
+                 Submit your subject name and exam schedule details here.
+            </div>
+            <div class="con"data-aos="fade-right">
+                 Also assign a unique password for the exam.
+            </div>
+            <div class="con"data-aos="fade-right">
+                 Share the unique password only with students.
+            </div>
+            <div class="con"data-aos="fade-right">
+                 Once you fill in all details and click submit you will not be allowed to change any detail and you will be directed for uploading questions for the exam.
+            </div>
+            <div class="con"data-aos="fade-right">
+                Assign time carefully checking whether browser is showing time in 24hr format or 12hr format.
+           </div>
+            <br>
+            <center><button class="cont"onclick="toggle()">Continue</button></center>
+</div>
+        <script type="text/javascript">
+            function toggle()
+            {
+                var blur = document.getElementById('blured');
+                 blur.classList.toggle('active');
+              var pop = document.getElementById('popup');
+              pop.classList.toggle('active');
+            }
+        </script>
+    </body>
+</html>

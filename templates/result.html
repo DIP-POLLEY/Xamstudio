@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'image/logo.png' %}" rel="icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Check Result</title>
+        <link rel="stylesheet" href="{% static 'style/result.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body style="min-height: 80vh;">
+
+        <nav class="stk">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">
+                <!-- <img src="image/teacher.png"> -->
+                {% if user.is_authenticated %}
+                Hi, {{user.first_name}}
+                {% endif %}
+            </label>
+            
+            <ul>
+              
+              
+              <!-- <li><a href="#skilll">Check Result</a></li> -->
+              <li><a href="../">Home</a></li>
+              <li><a href="#proj">Contact Us</a></li>
+              <li><a href="../accounts/logout">Logout</a></li>
+              
+            </ul>
+          </nav>
+
+          <form method="POST" action="result1">
+            {% csrf_token %}
+            <center><input type="text" id="res" name="cors"placeholder="Enter Course Code"required/>
+                <br>
+                <input class="butn"type="submit" value="Download" >
+            </center>
+          </form>
+          <br>
+          <br>
+          <br>
+          <center><div class=join>
+              <div class=d1>Name</div>
+              <div class=d2>No. of Correct</div>
+              <div class=d3>Total No. of Questions</div>
+              
+          </div></center>
+          
+          {% for i in result %}
+          {% if i.nosub == nam %}
+          <hr>
+          <div class=join>
+            <div class=d1>{{i.uname}}</div>
+            <div class=d2>{{i.score}}</div>
+            <div class=d3>{{no}}</div>
+            
+        </div>
+        {% endif %}
+        {% endfor %}
+        <br>
+        <p style="color:red;padding-left:4vw;">** If name does not appear after completing exam then your exam was shut due to malpractice.</p>
+        <br><br><center>
+          <div style="font-size: 1.2em; color: red">
+              {% for message in messages %}
+              {{ message }}
+              {% endfor %}</center>
+    </body>
+</html>

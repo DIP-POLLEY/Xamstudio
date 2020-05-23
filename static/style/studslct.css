@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+  background-image: linear-gradient(to bottom right,#fff ,#fff,#fff, rgb(197, 197, 197) );
+  /* background-color: rgb(238, 238, 238); */
+  /* background-image: url("../image/pencil.png");
+    background-size: contain; */
+  height: 100vh;
+}
+/*navigation bar*/
+nav{
+    position: fixed;
+    background-image: linear-gradient(to right,#1D976C,#93F9B9);
+    height: 10vh;
+    width: 100%;
+    top:0;
+    z-index: 1000;
+  }
+  label.logo{
+    color: white;
+    font-size: 1.5em;
+    line-height: 60px;
+    font-weight: bold;
+    padding: 0 70px;
+  }
+ 
+   nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+   nav ul li{
+    display: inline-block;
+    /* line-height: 80px; */
+    margin: 3vh 2px;
+  }
+   nav ul li a{
+    color: white;
+    background: rgba(0,0,0,0.15);
+    font-size: 0.80em;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  nav a.active,nav a:hover{
+    background: rgb(13, 160, 86);
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  .logo img{
+    margin-top: 0.5%;
+    left: 0;
+    width: 3%;
+    background-color: white;
+    border-radius: 50%;
+    
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    .stk nav ul li a{
+      font-size: 16px;
+    }
+    .nav
+    {
+      position: fixed;
+      background:lightblue;
+      height: 66px;
+      width: 100%;
+      top:0;
+      z-index: 1000;
+    }
+  }
+  @media (max-width: 858px){
+    .stk
+    {
+      background: linear-gradient(#00B4DB,#0083B0);
+    }
+    
+    .checkbtn{
+      display: block;
+    }
+    nav ul{
+      position: fixed;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(#00B4DB,#0083B0);
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+     nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+     nav ul li a{
+      font-size: 20px;
+    }
+    nav a:hover,nav a.active{
+      background: none;
+      color: #0c2b4e;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+    .logo img
+    {
+      width: 15%;
+    }
+  }
+
+.from
+{
+    padding-top: 20vh;
+    
+}
+.from button
+{
+    padding-bottom: 10vh;
+    padding-left: 2vw;
+    font-size: 1.1em;
+    border:none;
+    background: transparent;
+    color: rgb(158, 158, 158);
+}
+.from h1
+{
+    text-align: center;
+    font-size: 3em;
+    color: rgb(10, 145, 61);
+    font-family: 'Aladin', cursive;
+}
+.from form{
+    text-align: center;
+}
+#sbjct
+{
+    border: none;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+    width: 35vw;
+    text-align: center;
+    font-size: 1.7em;
+    background-color: transparent;
+    color: rgb(179, 179, 179);
+    border-bottom: 2px solid rgb(77, 230, 158);
+}
+.butn
+{
+    margin-top: 5vh;
+  padding-top: 2vh;
+  padding-left: 3vw;
+  padding-bottom: 2vh;
+  padding-right: 3vw;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right,#007991,#78ffd6);
+  color: #fff;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.4);
+  font-weight: bold;
+}
+#popup
+{
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:40%;
+    border-radius: 20px;
+    padding-top: 4vh;
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-bottom: 4vh;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    background-image:linear-gradient(to left,#00b09b,#96c93d);
+    color: #fff;
+    font-size: 1.25em;
+    visibility: hidden;
+    opacity: 0;
+    text-align: left;
+    transition: 0.5s;
+}
+#popup.active
+{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+
+}
+.cont 
+{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left:10px;
+  padding-right:10px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  /* font-size: 1.1em; */
+  color: #052242;
+}
+.from#blured.active
+{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}

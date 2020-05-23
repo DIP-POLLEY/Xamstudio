@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'image/logo.png' %}" rel="icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Questions</title>
+        <link rel="stylesheet" href="{% static 'style/cretquest.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+    </head>
+    <body >
+        
+        <section class="quap"id="blured">
+            <div style="display: flex; font-size: 1.2em;color: rgb(109, 109, 109);font-family: 'Merienda', cursive;">
+                <p style="width:50vw;padding: 1%;">Subject:{{subject}}</p>
+                <p style="width:50vw;text-align: right;padding: 1%;">Date:{{date}}</p>
+            </div>
+                <h1>Add Questions</h1>
+            <marquee><button class="wrn "onclick="toggle()">Please click here if you are adding questions first time in our platform</button>
+            </marquee>    
+                <form method="POST" action='add_question'>
+                {% csrf_token %}
+            <center>
+            <label class="qno"for=ques>Q{{num}})</label>
+            <input type="text" id="ques"  name="quest"placeholder="Write a question here... "required/></center>
+            <br><br><br>
+            <div class="join">
+                <div class="chckbx1">
+                    <input type="checkbox" name="chek1"id="check1">
+                    <input type="text" id="opt1"  name="opt1" placeholder="Option1"required/>
+                    <input type="checkbox" name="chek2" id="check2">
+                    <input type="text" id="opt2"  name="opt2" placeholder="Option2"required/>
+                </div>
+                <br><br><br>
+                <div class="chckbx2">
+                    <input type="checkbox" name="chek3"id="check3">
+                    <input type="text" id="opt3"  name="opt3" placeholder="Option3"required/>
+                    <input type="checkbox" name="chek4"id="check4">
+                    <input type="text" id="opt4"  name="opt4" placeholder="Option4"required/>
+                </div>
+            </div>
+            <br><br><br>
+            <center><input class="butn"type="submit" value="+ Add Question" ></center>
+        </form>
+        </section>
+        <div id=popup>
+   
+            <div class="con"data-aos="fade-right">
+                 Write a qiestion and its corresponding options and select the correct option.
+            </div>
+            <div class="con"data-aos="fade-right">
+                 Click on add question to add the question to the question paper and then you will be directed to upload the next question.
+            </div>
+            <div class="con"data-aos="fade-right">
+                 Once the add question button is clicked you will not be allowed to change it.
+            </div>
+            <div class="con"data-aos="fade-right">
+                 This will stop only after you upload the total number of questions you submitted earlier for the subject.
+            </div>
+            <div class="con"data-aos="fade-right">
+                After adding all questions you will be redirected to your dashboard, and will not be allowed to see question paper.
+           </div>
+            <br>
+            <center><button class="cont"onclick="toggle()">Continue</button></center>
+</div>
+        <script type="text/javascript">
+            function toggle()
+            {
+                var blur = document.getElementById('blured');
+                 blur.classList.toggle('active');
+              var pop = document.getElementById('popup');
+              pop.classList.toggle('active');
+            }
+        </script>
+    </body>
+    </html>
